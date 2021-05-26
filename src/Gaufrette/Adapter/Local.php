@@ -49,6 +49,10 @@ class Local implements Adapter,
      */
     public function read($key)
     {
+        if ($this->isDirectory($key)) {
+            return false;
+        }
+
         return file_get_contents($this->computePath($key));
     }
 
