@@ -276,7 +276,7 @@ class Ftp implements Adapter,
 
         if (!array_key_exists($key, $this->fileData)) {
             $dirname = \Gaufrette\Util\Path::dirname($key);
-            $directory = $dirname == '.' ? '' : $dirname;
+            $directory = $dirname === '.' ? '' : $dirname;
             $this->listDirectory($directory);
         }
 
